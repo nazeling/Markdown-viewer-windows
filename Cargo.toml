@@ -1,0 +1,23 @@
+[package]
+name = "markdown_viewer_improved"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = { version = "0.27.2", features = ["persistence"] } # Or latest
+egui = "0.27.2"
+egui_extras = { version = "0.27.2", features = ["image"] } # For image loading
+pulldown-cmark = { version = "0.10.0", default-features = false, features = ["html"] } # Enable features as needed
+rfd = "0.14.1" # Or latest
+syntect = "5.2.0" # For syntax highlighting
+lazy_static = "1.4.0" # For syntect setup
+open = "5.1.2" # For opening links
+log = "0.4.21" # Optional: for logging errors
+
+# Windows specific
+[target.'cfg(windows)'.dependencies]
+winreg = "0.52.0"
+winapi = { version = "0.3.9", features = ["wincon"] }
+
+# If you want nicer logging (optional)
+env_logger = "0.11.3"
